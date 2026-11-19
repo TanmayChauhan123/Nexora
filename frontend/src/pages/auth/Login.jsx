@@ -7,6 +7,7 @@ import { AuthShell } from "./AuthShell";
 import { Button, Field, Input } from "../../components/ui";
 import { useAuth } from "../../context/AuthContext";
 
+
 export default function Login() {
   const { login } = useAuth();
   const navigate = useNavigate();
@@ -41,6 +42,7 @@ export default function Login() {
 
   return (
     <AuthShell>
+      
       <h1 className="text-2xl font-bold text-ink">Welcome back</h1>
       <p className="mt-1.5 text-sm text-ink-soft">
         Sign in to your Nexora workspace.
@@ -85,7 +87,10 @@ export default function Login() {
 
       <p className="mt-6 text-center text-sm text-ink-soft">
         Don't have an account?{" "}
-        <Link to="/register" className="font-semibold text-brand-700 hover:underline">
+        <Link
+          to="/register"
+          className="font-semibold text-brand-700 hover:underline"
+        >
           Create one
         </Link>
       </p>

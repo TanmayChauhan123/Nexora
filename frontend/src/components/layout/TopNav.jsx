@@ -1,5 +1,13 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { Search, Bell, Menu, ChevronDown, User, LogOut, Sparkles } from "lucide-react";
+import {
+  Search,
+  Bell,
+  Menu,
+  ChevronDown,
+  User,
+  LogOut,
+  Sparkles,
+} from "lucide-react";
 import {
   Avatar,
   IconButton,
@@ -10,6 +18,7 @@ import {
 } from "../ui";
 import { useAuth } from "../../context/AuthContext";
 import { cn } from "../../lib/utils";
+import nexoraLogo from "../../assets/nexora.jpg";
 
 /* Centered text links — a subset of the primary nav, rendered in a white pill
    exactly like the reference top bar. */
@@ -28,11 +37,16 @@ export function TopNav({ onMenuClick }) {
   return (
     <header className="flex items-center gap-3">
       {/* Brand */}
-      <div className="flex items-center gap-2.5 pr-2">
-        <div className="brand-gradient flex h-9 w-9 items-center justify-center rounded-xl text-white">
-          <Sparkles className="h-5 w-5" />
+      <div className="mb-6 flex items-center gap-3">
+        <div className="h-12 w-12 rounded-full bg-[#0D0628] flex items-center justify-center overflow-hidden">
+          <img
+            src={nexoraLogo}
+            alt="Nexora Logo"
+            className="h-full w-full object-cover scale-125"
+          />
         </div>
-        <span className="hidden font-display text-lg font-bold text-ink sm:block">
+
+        <span className="text-2xl font-extrabold tracking-tight text-ink">
           Nexora
         </span>
       </div>
@@ -58,7 +72,7 @@ export function TopNav({ onMenuClick }) {
                 "rounded-full px-5 py-2 text-sm font-medium transition",
                 isActive
                   ? "bg-surface-muted text-ink shadow-sm"
-                  : "text-ink-soft hover:text-ink"
+                  : "text-ink-soft hover:text-ink",
               )
             }
           >

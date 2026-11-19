@@ -11,6 +11,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { cn } from "../../lib/utils";
+import nexoraLogo from "../../assets/nexora.jpg";
 import { useAuth } from "../../context/AuthContext";
 
 /* Primary navigation — icon + label rail, matching the reference sidebar. */
@@ -29,11 +30,18 @@ export function Sidebar({ onNavigate }) {
   return (
     <aside className="flex h-full w-64 flex-col bg-surface border-r border-line">
       {/* Brand */}
-      <div className="flex items-center gap-2.5 px-6 py-6">
-        <div className="brand-gradient flex h-9 w-9 items-center justify-center rounded-xl text-white">
-          <Sparkles className="h-5 w-5" />
+      <div className="mb-6 flex items-center gap-3">
+        <div className="h-12 w-12 rounded-full bg-[#0D0628] flex items-center justify-center overflow-hidden">
+          <img
+            src={nexoraLogo}
+            alt="Nexora Logo"
+            className="h-full w-full object-cover scale-125"
+          />
         </div>
-        <span className="font-display text-lg font-bold text-ink">Nexora</span>
+
+        <span className="text-2xl font-extrabold tracking-tight text-ink">
+          Nexora
+        </span>
       </div>
 
       {/* Nav links */}
@@ -49,7 +57,7 @@ export function Sidebar({ onNavigate }) {
                 "flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm font-medium transition",
                 isActive
                   ? "bg-brand-50 text-brand-700"
-                  : "text-ink-soft hover:bg-surface-muted hover:text-ink"
+                  : "text-ink-soft hover:bg-surface-muted hover:text-ink",
               )
             }
           >
@@ -69,7 +77,7 @@ export function Sidebar({ onNavigate }) {
               "flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm font-medium transition",
               isActive
                 ? "bg-brand-50 text-brand-700"
-                : "text-ink-soft hover:bg-surface-muted hover:text-ink"
+                : "text-ink-soft hover:bg-surface-muted hover:text-ink",
             )
           }
         >

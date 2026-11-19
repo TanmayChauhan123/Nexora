@@ -6,6 +6,7 @@ import { User, Mail, Lock, Building2 } from "lucide-react";
 import { AuthShell } from "./AuthShell";
 import { Button, Field, Input } from "../../components/ui";
 import { useAuth } from "../../context/AuthContext";
+import nexoraLogo from "../../assets/nexora.jpg";
 
 export default function Register() {
   const { register: registerUser } = useAuth();
@@ -95,7 +96,10 @@ export default function Register() {
 
       <p className="mt-6 text-center text-sm text-ink-soft">
         Already have an account?{" "}
-        <Link to="/login" className="font-semibold text-brand-700 hover:underline">
+        <Link
+          to="/login"
+          className="font-semibold text-brand-700 hover:underline"
+        >
           Sign in
         </Link>
       </p>
